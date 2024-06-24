@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in bought %}
+                <tr>
+                    <td>{{row['symbol']}}</td>
+                    <td>{{row['shares']}}</td>
+                    <td>{{row['price']|usd}}</td>
+                    <td>{{row['total']|usd }}</td>
+                </tr>
+            {% endfor %}
+                <tr>
+                    <td></td><td></td><td></td><td></td>
+                    <td>CASH</td>
+                    <td>{{cash|usd }}</td>
+                </tr>
+                <tr>
+                    <td></td><td></td><td></td><td></td>
+                    <td>TOTAL</td>
+                    <<td>{{sum|usd }}</td>
+                </tr>
+        </tbody>
+    </table>
+{% endblock %}

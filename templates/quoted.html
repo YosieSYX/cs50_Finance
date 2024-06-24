@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+  <tr>
+     <td>A share of {{query['symbol']}} ({{query['symbol']}}) costs {{query['price']|usd}}</td>
+  </tr>
+{% endblock %}
+
